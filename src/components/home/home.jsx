@@ -1,14 +1,13 @@
 import axios from 'axios';
 import { useState, useRef } from 'react';
+import WeatherCard from '../weatherWidget/weatherWidget.jsx';
 
 const Home = () => {
-    //   const [cityName, setCityName] = useState("");
-
-
-
 
     const cityNameRef = useRef(null)
-    const [weatherData, setWeatherData] = useState({}); // State to store weather data
+
+    const [weatherData, setWeatherData] = useState(null); // State to store weather data
+
     const API_KEY = "e0f99c494c2ce394a18cc2fd3f100543";
 
     const submitHandler = async (e) => {
@@ -43,13 +42,15 @@ const Home = () => {
 
             <hr />
 
-            {(weatherData) ? <div>
-                <h2>Weather in {weatherData?.name}, {weatherData?.sys?.country}</h2>
-                <p>Temperature: {weatherData?.main?.temp}°C</p>
-                {/* <p>Weather: {weatherData?.weather[0]?.description}</p> */}
-            </div>
-                :
-                (<div>No City found</div>)}
+            {weatherData ? 
+                <WeatherCard weatherData={weatherData} />
+             : (
+                <div> </div>
+            )
+            } 
+
+
+            
 
 
 
