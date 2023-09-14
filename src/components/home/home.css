@@ -1,0 +1,54 @@
+.mainContainer {
+    /* background-color: red; */
+    width: 50%;
+    margin: 60px auto;
+}
+
+.formHead {
+    background-color: red;
+    display: flex;
+    height: 40px;
+    width: 500px;
+}
+
+.inputCityName {
+    width: 70%;
+    height: 91%;
+    border: 1px solid black;
+    border-right: none;
+    padding: 10px;
+}
+
+
+.inputCityName::placeholder {
+    font-size: 16px;
+}
+
+
+.inputCityName:focus {
+    outline: none;
+}
+
+.submitBtn {
+    width: 33%;
+    height: 100%;
+    border: 1px solid black;
+    border-left: none;
+    background-color: rgb(13, 188, 194);
+    color: white;
+    font-size: 16px; 
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.submitBtn:hover {
+    background-color: rgb(15, 172, 177);
+}
+
+
+.submitBtn:active {
+    background-color: rgb(37, 197, 203);
+}

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useRef } from 'react';
 import WeatherCard from '../weatherWidget/weatherWidget.jsx';
+import './home.css'
 
 const Home = () => {
 
@@ -25,9 +26,10 @@ const Home = () => {
     };
 
     return (
-        <div>
+        <div className='mainContainer'>
             <form onSubmit={submitHandler}>
-                <input
+                <div className='formHead'>
+                <input className='inputCityName'
                     type="text"
                     placeholder="Enter any city name"
                     id="cityInput"
@@ -37,10 +39,11 @@ const Home = () => {
                     //   onChange={(e) => setCityName(e.target.value)}
                     ref={cityNameRef}
                 />
-                <button type="submit">Check Weather</button>
+                <button type="submit" className='submitBtn'>Check Weather</button>
+                </div>
             </form>
 
-            <hr />
+            {/* <hr /> */}
 
             {weatherData ? 
                 <WeatherCard weatherData={weatherData} />

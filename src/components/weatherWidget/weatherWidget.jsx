@@ -3,17 +3,22 @@ import './weatherWidget.css'
 function WeatherCard({ weatherData }) {
     return (
         <div className='card'>
-            city name: {weatherData?.name}
+            <div className='cityName'>{weatherData?.name}</div>
             <br />
-            country: {weatherData?.sys?.country}
+
+            <div className='country'>{weatherData?.sys?.country}</div>
             <br />
-            Temperature: {weatherData?.main?.temp}
+
+            <div className='temp'>{Math.rounweatherData?.main?.temp}°C</div>
             <br />
-            Humidity: {weatherData?.main?.humidity}
+
+            <div className='humidity'>{weatherData?.main?.humidity}</div>
             <br />
-            Humidity: {weatherData?.wind?.speed}
+
+            <div className='wind'>{weatherData?.wind?.speed}</div>
             <br />
-            Weather: {weatherData?.weather[0]?.description}
+
+            <div className='weather'>{weatherData?.weather[0]?.description}</div>
 
         </div>
     )
